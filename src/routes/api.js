@@ -2,6 +2,7 @@ const HelloController= require("../controllers/HelloController")
 
 const express = require('express');
 const StudentsController = require("../controllers/StudentsController");
+const JWTPractice = require("../controllers/JWTPractice");
 const router = express.Router();
 
 // This is my first get routing
@@ -16,3 +17,9 @@ router.post("/UpdateStudent/:id", StudentsController.UpdateStudent)
 router.post("/DeleteStudent/:id", StudentsController.DeleteStudent)
 
 module.exports = router;
+
+// Create JWT Token
+
+router.get("/CreateToken", JWTPractice.CreateToken)
+
+router.get("/DecodeToken", JWTPractice.DecodeToken)
